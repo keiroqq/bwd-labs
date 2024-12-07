@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/menuStyle.css" />
+    <link rel="stylesheet" href="styles/tableStyles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="icon" href="images/FAVICON.png" type="image/x-icon">
+    <title>DT:Задачи</title>
+    <style>
+      @media (max-width: 480px) {
+        body {
+          margin-top: 50%;
+        }
+      }
+      @media (max-width: 380px) {
+        body {
+          margin-top: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar__wrap">
+          <div class="hamb">
+            <div class="hamb__field" id="hamb">
+              <span class="bar"></span> <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+          <div class="logo-head">
+            <img src="images/DAILYTWEEKER.svg" alt="Логотип" />
+          </div>
+          <ul class="menu" id="menu">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="tasks.html">Задачи</a></li>
+            <li><a href="error.html">Проект</a></li>
+            <li><a href="about.html">О приложении</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="popup" id="popup"></div>
+    <main>
+      <h1>Список задач</h1>
+
+      <table class="resp-tab">
+        <thead>
+          <tr>
+            <th>Задача</th>
+            <th>В процессе</th>
+            <th>Выполнена</th>
+            <th>Прочее</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span>Задача</span>Принять душ</td>
+            <td>
+              <span>В процессе</span>
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="checkbox_id1"
+              />
+              <label for="checkbox_id1"></label>
+            </td>
+            <td>
+              <span>Выполнена</span>
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="checkbox_id2"
+              />
+              <label for="checkbox_id2"></label>
+            </td>
+
+            <td>
+              <span>Прочее</span>
+              <div class="delete_button">
+                <button type="button">Удалить</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span>Задача</span>Закончить проект</td>
+            <td>
+              <span>В процессе</span>
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="checkbox_id3"
+              />
+              <label for="checkbox_id3"></label>
+            </td>
+            <td>
+              <span>Выполнена</span>
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="checkbox_id4"
+              />
+              <label for="checkbox_id4"></label>
+            </td>
+
+            <td>
+              <span>Прочее</span>
+              <div class="delete_button">
+                <button type="button">Удалить</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><span>Задача</span>Апнуть титана</td>
+            <td>
+              <span>В процессе</span>
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="checkbox_id5"
+              />
+              <label for="checkbox_id5"></label>
+            </td>
+            <td>
+              <span>Выполнена</span>
+              <input
+                type="checkbox"
+                class="custom-checkbox"
+                id="checkbox_id6"
+              />
+              <label for="checkbox_id6"></label>
+            </td>
+            <td>
+              <span>Прочее</span>
+              <div class="delete_button">
+                <button type="button">Удалить</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <dialog id="modal">
+        <div class="modal_header"><p2>Добавить задачу</p2></div>
+        <div class="forma">
+          <form method="post">
+            <div class="text-field">
+              <label class="text-field__label" for="task"></label>
+              <input
+                class="text-field__input"
+                type="text"
+                name="task"
+                id="task"
+                placeholder="Название задачи..."
+                required
+              />
+            </div>
+            <div class="buttons">
+              <button type="submit" id="submit-button">Добавить</button>
+              <button type="reset" id="close-button">Отмена</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
+
+      <div class="add_button">
+        <button type="button" id="open-button">Добавить</button>
+      </div>
+    </main>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/jquery-3.7.1.slim.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function() {
+          // this will get the full URL at the address bar
+          var url = window.location.href;
+  
+          // passes on every "a" tag
+          $(".menu a").each(function() {
+              // checks if its the same on the address bar
+              if (url == (this.href)) {
+                  $(this).closest("li").addClass("act");
+                  //for making parent of submenu active
+                 $(this).closest("li").parent().parent().addClass("act");
+              }
+          });
+      });        
+  </script>
+  <script src="bundle.js"></script>
+  </body>
+</html>

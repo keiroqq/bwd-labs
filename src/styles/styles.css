@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  background-image: radial-gradient(ellipse, #0000, #0007);
+  background-repeat: round;
+  background-size: cover;
+  position: relative;
+  width: 80vw;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+main > p {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: inherit;
+  max-width: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.logo {
+  justify-content: center;
+  display: flex;
+  height: 8em;
+}
+
+main h1 {
+  text-align: center;
+}
+
+.add_button {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #8d8d8d;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox:checked + label::before {
+  border-color: #747474;
+  background-color: #747474;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #000000;
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked) + label::before {
+  border-color: #8d8d8d;
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled + label::before {
+  background-color: #e9ecef;
+}
+
+.add_button button,
+.delete_button button,
+.buttons button {
+  appearance: none;
+  border: none;
+  min-width: 80px;
+  min-height: 25px;
+  padding-block: 1px;
+  padding-inline: 6px;
+  padding: 2px 15px 0 15px;
+  font-family: inherit;
+  border-radius: 8px;
+  background-color: #747474;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.add_button {
+    margin-bottom: 20px;
+}
+
+.add_button button:hover,
+.delete_button button:hover {
+  background-color: #747474c5;
+}
+
+#close_button {
+    text-align: right;
+}
+
+#modal {
+    min-height: 140px;
+    height: 30%;
+    max-height: 200px;
+    min-width: 240px;
+    width: 45%;
+    max-width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    overflow-y: hidden;
+}
+
+.modal_header {
+    text-align: center;
+    font-family: inherit;
+    font-size: 1.2em;
+}
+
+.forma {
+    margin: 0;    
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 1 */
+    line-height: inherit; /* 1 */
+    margin: 0; /* 2 */
+  }
+
+  .text-field {
+    margin-bottom: 1rem;
+  }
+  /* стили для label */
+  .text-field__label {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  /* стили для input */
+  .text-field__input {
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  
+
+  .main-container {
+    margin-top: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: none;
+  }
+
+  .error-image-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 800px;
+    max-height: 800px;
+    display: block;
+  
+  }
