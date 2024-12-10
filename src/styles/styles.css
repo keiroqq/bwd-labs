@@ -189,9 +189,7 @@ input[type="text"] {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-
   
-
   .main-container {
     margin-top: 75px;
     display: flex;

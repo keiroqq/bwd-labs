@@ -40,6 +40,51 @@
     top: 0;
     left: 0;    
 }
+
+.sort-options {
+    margin: 20px 0;
+}
+  
+.sort-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+  
+.sort-list li {
+    display: inline;
+}
+  
+.sort-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+  
+.sort-btn:hover {
+    background-color: #ddd;
+}
+
+.priority-menu {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 6px;
+}
+
+.delete_button {
+  display: inline-block;
+}
+
+.priority-select {
+  margin-bottom: 0;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 90px;
+}
+
 @media(max-width: 768px) {
     tbody {
         margin-bottom: 80px;
