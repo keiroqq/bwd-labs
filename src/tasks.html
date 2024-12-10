@@ -8,18 +8,6 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" href="images/FAVICON.png" type="image/x-icon">
     <title>DT:Задачи</title>
-    <style>
-      @media (max-width: 480px) {
-        body {
-          margin-top: 50%;
-        }
-      }
-      @media (max-width: 380px) {
-        body {
-          margin-top: 70%;
-        }
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -44,109 +32,34 @@
       </div>
     </nav>
     <div class="popup" id="popup"></div>
-    <main>
+    <main style="top: 100px; transform: translate(-50%, 0%);">
       <h1>Список задач</h1>
-
+      <div class="sort-options">
+        <ul class="sort-list">
+          <li><button type="button" class="sort-btn" data-column="todo">Задачи</button></li>
+          <li><button type="button" class="sort-btn" data-column="progress">В процессе</button></li>
+          <li><button type="button" class="sort-btn" data-column="done">Выполнены</button></li>
+        </ul>
+      </div>
       <table class="resp-tab">
         <thead>
           <tr>
-            <th>Задача</th>
-            <th>В процессе</th>
-            <th>Выполнена</th>
-            <th>Прочее</th>
+            <th class="task-column">Задача</th>
+            <th class="in-progress-column">В процессе</th>
+            <th class="completed-column">Выполнена</th>
+            <th class="other-column">Прочее</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td><span>Задача</span>Принять душ</td>
-            <td>
-              <span>В процессе</span>
-              <input
-                type="checkbox"
-                class="custom-checkbox"
-                id="checkbox_id1"
-              />
-              <label for="checkbox_id1"></label>
-            </td>
-            <td>
-              <span>Выполнена</span>
-              <input
-                type="checkbox"
-                class="custom-checkbox"
-                id="checkbox_id2"
-              />
-              <label for="checkbox_id2"></label>
-            </td>
-
-            <td>
-              <span>Прочее</span>
-              <div class="delete_button">
-                <button type="button">Удалить</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><span>Задача</span>Закончить проект</td>
-            <td>
-              <span>В процессе</span>
-              <input
-                type="checkbox"
-                class="custom-checkbox"
-                id="checkbox_id3"
-              />
-              <label for="checkbox_id3"></label>
-            </td>
-            <td>
-              <span>Выполнена</span>
-              <input
-                type="checkbox"
-                class="custom-checkbox"
-                id="checkbox_id4"
-              />
-              <label for="checkbox_id4"></label>
-            </td>
-
-            <td>
-              <span>Прочее</span>
-              <div class="delete_button">
-                <button type="button">Удалить</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><span>Задача</span>Апнуть титана</td>
-            <td>
-              <span>В процессе</span>
-              <input
-                type="checkbox"
-                class="custom-checkbox"
-                id="checkbox_id5"
-              />
-              <label for="checkbox_id5"></label>
-            </td>
-            <td>
-              <span>Выполнена</span>
-              <input
-                type="checkbox"
-                class="custom-checkbox"
-                id="checkbox_id6"
-              />
-              <label for="checkbox_id6"></label>
-            </td>
-            <td>
-              <span>Прочее</span>
-              <div class="delete_button">
-                <button type="button">Удалить</button>
-              </div>
-            </td>
-          </tr>
+        <tbody id="taskList">
+          <tbody>
+            
         </tbody>
       </table>
 
       <dialog id="modal">
         <div class="modal_header"><p2>Добавить задачу</p2></div>
         <div class="forma">
-          <form method="post">
+          <form>
             <div class="text-field">
               <label class="text-field__label" for="task"></label>
               <input
@@ -189,6 +102,7 @@
           });
       });        
   </script>
+  <script src="scripts/taskManager.js"></script>
   <script src="bundle.js"></script>
   </body>
 </html>
